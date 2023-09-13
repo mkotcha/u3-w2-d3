@@ -1,0 +1,58 @@
+@import "./overrides";
+
+.preview-container {
+  overflow-x: hidden;
+}
+
+.preview-container2 img {
+  width: 250px;
+  /* height: 100%; */
+  cursor: pointer;
+}
+
+.carousel-inner {
+  left: 0;
+  overflow: visible;
+  transition: left 1s;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  left: -110px;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+div div a.view-box i:hover {
+  border: 1px solid white !important;
+  color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  max-width: 150px;
+  min-width: 128px;
+  opacity: 0.5;
+  &:focus {
+    opacity: 0.5;
+  }
+  &:hover {
+    background-color: transparent;
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: transparent !important;
+    opacity: 0.5;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .carousel-control-prev {
+    justify-content: start;
+  }
+  .carousel-control-next {
+    justify-content: end;
+  }
+}
