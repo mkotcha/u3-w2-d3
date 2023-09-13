@@ -1,7 +1,8 @@
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const TopBar = () => {
+  const location = useLocation();
   return (
     <header>
       <Navbar expand="lg" className="mb-4">
@@ -32,7 +33,8 @@ const TopBar = () => {
 
           <Nav className="ms-auto me-2 d-flex flex-row flex-nowrap align-items-center  ">
             <NavLink className="nav-link" to="search">
-              <i className="bi bi-search me-4 me-lg-0"></i>
+              {location.pathname.includes("tv-shows") ? "Search TV Series " : ""}
+              <i className="bi bi-search ms-2 me-4 me-lg-0"></i>
             </NavLink>
             <NavLink className="nav-link d-none d-sm-block me-4 me-lg-0 fs-7 fw-bold" to="kids">
               KIDS

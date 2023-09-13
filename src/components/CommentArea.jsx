@@ -30,7 +30,6 @@ const CommentArea = ({ imdbID }) => {
           setHasError(true);
         }
       } catch (error) {
-        console.log(error);
       } finally {
         setIsLoading(false);
       }

@@ -24,7 +24,10 @@ const SingleComment = ({ comment, setModded }) => {
   return (
     <ListGroup.Item className="d-flex align-items-center">
       <span className="me-auto">{comment.comment}</span>
-      <Button variant="danger" size="sm" onClick={() => deleteComment(comment, setModded)}>
+      <Button
+        variant="border-danger text-white btn-outline-danger"
+        size="sm"
+        onClick={() => deleteComment(comment, setModded)}>
         <i className="bi bi-trash"></i>
       </Button>
     </ListGroup.Item>

@@ -67,14 +67,13 @@ const AddComment = ({ imdbID, setModded }) => {
 
   useEffect(() => {
     if (commentObj.elementId !== imdbID) {
-      console.log(imdbID);
       setCommentObj({ ...commentObj, elementId: imdbID });
     }
   }, [imdbID, commentObj]);
 
   return (
     <>
-      <Button variant="primary" className="w-100 mt-2" onClick={handleShow}>
+      <Button variant="border-secondary text-white btn-outline-secondary " className="w-100 mt-2" onClick={handleShow}>
         add comment
       </Button>
 
