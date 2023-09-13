@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Alert, Spinner, Container, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const cardWidth = 254;
 
@@ -89,7 +90,9 @@ class Gallery extends Component {
 
           <div className="carousel-inner d-flex preview-container2 d-relative">
             {this.state.shows.map(show => (
-              <img src={show.Poster} className="carousel-item d-block me-1" alt={show.Title} key={show.imdbID} />
+              <NavLink to={"/movie-details/" + show.imdbID}>
+                <img src={show.Poster} className="carousel-item d-block me-1" alt={show.Title} key={show.imdbID} />
+              </NavLink>
             ))}
           </div>
 

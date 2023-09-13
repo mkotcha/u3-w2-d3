@@ -1,4 +1,5 @@
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const TopBar = () => {
   return (
@@ -11,38 +12,52 @@ const TopBar = () => {
 
           <Navbar.Collapse id="right-navbar-nav">
             <Nav>
-              <Nav.Link aria-current="page" href="index.html">
+              <NavLink className="nav-link" to="/">
                 Home
-              </Nav.Link>
-              <Nav.Link href="index.html" active>
+              </NavLink>
+              <NavLink className="nav-link" to="tv-shows">
                 Tv Shows
-              </Nav.Link>
-              <Nav.Link href="index.html">Movies</Nav.Link>
-              <Nav.Link href="index.html">Recently Added</Nav.Link>
-              <Nav.Link href="index.html">My List</Nav.Link>
+              </NavLink>
+              <NavLink className="nav-link" to="movies">
+                Movies
+              </NavLink>
+              <NavLink className="nav-link" to="recent">
+                Recently Added
+              </NavLink>
+              <NavLink className="nav-link" to="my-list">
+                My List
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
 
           <Nav className="ms-auto me-2 d-flex flex-row flex-nowrap align-items-center  ">
-            <Nav.Link href="index.html">
+            <NavLink className="nav-link" to="search">
               <i className="bi bi-search me-4 me-lg-0"></i>
-            </Nav.Link>
-            <Nav.Link className="d-none d-sm-block me-4 me-lg-0 fs-7 fw-bold" href="index.html">
+            </NavLink>
+            <NavLink className="nav-link d-none d-sm-block me-4 me-lg-0 fs-7 fw-bold" to="kids">
               KIDS
-            </Nav.Link>
-            <Nav.Link>
-              <i className="bi bi-bell-fill me-4 me-lg-0 "></i>
-            </Nav.Link>
+            </NavLink>
+            <NavLink>
+              <i className="nav-link bi bi-bell-fill me-4 me-lg-0 "></i>
+            </NavLink>
 
             <NavDropdown
               direction="start"
               href="index.html"
               aria-expanded="false"
               title={<img src="assets/imgs/avatar.png" alt="" width="32px" />}>
-              <NavDropdown.Item href="profile.html">Edit profile</NavDropdown.Item>
-              <NavDropdown.Item href="settings.html">Settings</NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink className="nav-link" to="profile">
+                  Edit profile
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink className="nav-link" to="settings">
+                  Settings
+                </NavLink>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="index.html">Something else here</NavDropdown.Item>
+              <NavDropdown.Item>Something else here</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Navbar.Toggle
